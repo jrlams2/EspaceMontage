@@ -1,0 +1,22 @@
+<template><style>@font-face{font-family:"Unbounded";src:url("assets/fonts/Unbounded.woff2");font-weight:100 900}@font-face{font-family:"Geist";src:url("assets/fonts/Geist.woff2");font-weight:100 900}
+#root{position:absolute;inset:0;background:#0B0F22;overflow:hidden;font-family:Unbounded,sans-serif;color:#fff}
+#ag{position:absolute;left:0;top:520px;width:1080px}#ve{position:absolute;left:0;top:0;width:1080px}
+.cap{position:absolute;left:120px;width:780px;top:300px;font-size:70px;font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.cap em{font-style:normal;color:#9B7BFF}
+#veWrap{position:absolute;inset:0;background:#0B0F22;clip-path:inset(100% 0 0 0)}
+</style>
+<div id="root" data-composition-id="cata" data-width="1080" data-height="1920">
+ <img id="ag" class="clip" src="assets/agents.png" data-start="0" data-duration="9">
+ <div id="k1" class="cap clip" data-start="0.2" data-duration="4.3">Un agent pour <em>chaque tâche.</em></div>
+ <div id="veWrap" class="clip" data-start="4.2" data-duration="4.8"><img id="ve" src="assets/vendre.png"></div>
+ 
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#ag',{y:200,scale:1},{y:-120,duration:4.4,ease:'power1.inOut'},0);
+tl.fromTo('#k1',{opacity:0,filter:'blur(8px)'},{opacity:1,filter:'blur(0px)',duration:.18,ease:'power4.out'},.2);
+tl.fromTo('#veWrap',{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:.5,ease:'power3.inOut'},4.2);
+tl.fromTo('#ve',{y:200},{y:-1300,duration:4.6,ease:'power1.inOut'},4.3);
+
+window.__timelines["cata"]=tl;
+</script></template>

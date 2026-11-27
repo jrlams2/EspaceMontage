@@ -1,0 +1,1079 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 5,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Audible clips overlap on Studio track 6: assets/whoosh.wav at 5.55-7.15s and assets/click.wav at 7-7.4s. Both play at once whatever their track (the render mixes every audible clip; data-track-index only picks the Studio lane), and Studio draws them over each other in that lane.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "If both should sound (a whoosh into a hit), give one its own data-track-index; the mix does not change. If one is a leftover duplicate, remove it or move it so the windows do not overlap."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 4 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/jremy/montage/projets/agentverse-promo/video/compositions/cata.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into smaller .html files and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"dv\"> has data-start=\"1.4\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#dv",
+        "dataAttributes": {},
+        "sourceFile": "/home/jremy/montage/projets/agentverse-promo/video/compositions/demo.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.4\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 5 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/jremy/montage/projets/agentverse-promo/video/compositions/demo.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into smaller .html files and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 4 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/jremy/montage/projets/agentverse-promo/video/compositions/pain.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into smaller .html files and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      }
+    ],
+    "filesScanned": 5
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"sx5\" is 0.37s but its slot (data-duration) is 0.50s — the slot is shortened to the media length when rendered. Set data-duration to ~0.37s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "38",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"sx8\" is 0.37s but its slot (data-duration) is 0.50s — the slot is shortened to the media length when rendered. Set data-duration to ~0.37s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "38",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0
+      }
+    ]
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 6,
+    "infoCount": 12,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 2.111,
+        "selector": "#p-a",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 120,
+          "top": 317,
+          "right": 770.14,
+          "bottom": 703.72,
+          "width": 650.14,
+          "height": 386.72
+        },
+        "containerSelector": "#p-b",
+        "text": "42 factures PDF.",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {
+          "data-start": "0",
+          "data-duration": "6"
+        },
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 120,
+          "y": 317,
+          "width": 650.14,
+          "height": 386.72
+        },
+        "firstSeen": 1.486,
+        "lastSeen": 5.944,
+        "occurrences": 23,
+        "heldMs": 4458,
+        "times": [
+          1.486,
+          1.698,
+          1.911,
+          2.111,
+          2.123,
+          2.335,
+          2.547,
+          2.76,
+          2.972,
+          3.184,
+          3.397,
+          3.609,
+          3.821,
+          4.034,
+          4.246,
+          4.458,
+          4.67,
+          4.883,
+          5.095,
+          5.307,
+          5.52,
+          5.732,
+          5.944
+        ]
+      },
+      {
+        "selector": "#c1",
+        "dataAttributes": {
+          "data-start": "1.5",
+          "data-duration": "3.1"
+        },
+        "sourceFile": "compositions/demo.html",
+        "bbox": {
+          "x": 120,
+          "y": 1283,
+          "width": 721.25,
+          "height": 151.3
+        },
+        "time": 10.556,
+        "rect": {
+          "left": 120,
+          "top": 1283,
+          "right": 841.25,
+          "bottom": 1434.3,
+          "width": 721.25,
+          "height": 151.3
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "Tu décris la tâche. En une phrase.",
+        "message": "<div> \"Tu décris la tâche. En une phrase.\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 10.556,
+        "lastSeen": 10.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          10.556
+        ]
+      },
+      {
+        "selector": "#c3",
+        "dataAttributes": {
+          "data-start": "7.4",
+          "data-duration": "3.4"
+        },
+        "sourceFile": "compositions/demo.html",
+        "bbox": {
+          "x": 120,
+          "y": 1283,
+          "width": 643.55,
+          "height": 151.3
+        },
+        "time": 14.778,
+        "rect": {
+          "left": 120,
+          "top": 1283,
+          "right": 763.55,
+          "bottom": 1434.3,
+          "width": 643.55,
+          "height": 151.3
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "L'agent lit les 42 PDF.",
+        "message": "<div> \"L'agent lit les 42 PDF.\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.778,
+        "lastSeen": 14.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.778
+        ]
+      },
+      {
+        "selector": "#c4",
+        "dataAttributes": {
+          "data-start": "10.8",
+          "data-duration": "5.2"
+        },
+        "sourceFile": "compositions/demo.html",
+        "bbox": {
+          "x": 120,
+          "y": 1283,
+          "width": 739.8,
+          "height": 151.3
+        },
+        "time": 19,
+        "rect": {
+          "left": 120,
+          "top": 1283,
+          "right": 859.8,
+          "bottom": 1434.3,
+          "width": 739.8,
+          "height": 151.3
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "Et te rend le fichier Excel.",
+        "message": "<div> \"Et te rend le fichier Excel.\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 19,
+        "lastSeen": 19,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          19
+        ]
+      },
+      {
+        "selector": "#word",
+        "dataAttributes": {},
+        "sourceFile": "compositions/fin.html",
+        "bbox": {
+          "x": 166.84,
+          "y": 724,
+          "width": 746.3,
+          "height": 128
+        },
+        "time": 31.667,
+        "rect": {
+          "left": 166.84,
+          "top": 724,
+          "right": 913.14,
+          "bottom": 852,
+          "width": 746.3,
+          "height": 128
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "Agentverse",
+        "message": "<div> \"Agentverse\" is outside the safe area: TikTok (right edge), YouTube Shorts (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 31.667,
+        "lastSeen": 35.889,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          31.667,
+          35.889
+        ]
+      },
+      {
+        "selector": "#tag",
+        "dataAttributes": {
+          "data-start": "2.0",
+          "data-duration": "5"
+        },
+        "sourceFile": "compositions/fin.html",
+        "bbox": {
+          "x": 271.58,
+          "y": 958,
+          "width": 536.84,
+          "height": 117.5
+        },
+        "time": 35.889,
+        "rect": {
+          "left": 271.58,
+          "top": 958,
+          "right": 808.42,
+          "bottom": 1075.5,
+          "width": 536.84,
+          "height": 117.5
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "Décris la tâche.L'agent te rend le fichier.",
+        "message": "<div> \"Décris la tâche.L'agent te rend le fichier.\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 35.889,
+        "lastSeen": 35.889,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          35.889
+        ]
+      },
+      {
+        "selector": "#cta",
+        "dataAttributes": {
+          "data-start": "3.4",
+          "data-duration": "3.6"
+        },
+        "sourceFile": "compositions/fin.html",
+        "bbox": {
+          "x": 276.81,
+          "y": 1162,
+          "width": 526.38,
+          "height": 54
+        },
+        "time": 35.889,
+        "rect": {
+          "left": 276.81,
+          "top": 1162,
+          "right": 803.19,
+          "bottom": 1216,
+          "width": 526.38,
+          "height": 54
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "Commencer gratuitement",
+        "message": "<div> \"Commencer gratuitement\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 35.889,
+        "lastSeen": 35.889,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          35.889
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc0 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 310.44,
+          "top": 782.06,
+          "right": 363.36,
+          "bottom": 822.26,
+          "width": 52.92,
+          "height": 40.2
+        },
+        "containerSelector": "#doc4",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.7,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 310.44,
+          "y": 782.06,
+          "width": 52.92,
+          "height": 40.2
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc1 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 449.62,
+          "top": 768.78,
+          "right": 500.56,
+          "bottom": 805.34,
+          "width": 50.94,
+          "height": 36.56
+        },
+        "containerSelector": "#doc5",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.85,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 449.62,
+          "y": 768.78,
+          "width": 50.94,
+          "height": 36.56
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc3 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 727.63,
+          "top": 777.55,
+          "right": 776.7,
+          "bottom": 810.99,
+          "width": 49.07,
+          "height": 33.44
+        },
+        "containerSelector": "#doc7",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 727.63,
+          "y": 777.55,
+          "width": 49.07,
+          "height": 33.44
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc4 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 345.3,
+          "top": 797.96,
+          "right": 396.66,
+          "bottom": 835.27,
+          "width": 51.37,
+          "height": 37.31
+        },
+        "containerSelector": "#doc8",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 345.3,
+          "y": 797.96,
+          "width": 51.37,
+          "height": 37.31
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc5 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 456.64,
+          "top": 793.75,
+          "right": 509.19,
+          "bottom": 833.25,
+          "width": 52.56,
+          "height": 39.5
+        },
+        "containerSelector": "#doc8",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 456.64,
+          "y": 793.75,
+          "width": 52.56,
+          "height": 39.5
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc6 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 595.91,
+          "top": 816.59,
+          "right": 646.4,
+          "bottom": 852.39,
+          "width": 50.5,
+          "height": 35.8
+        },
+        "containerSelector": "#doc10",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 595.91,
+          "y": 816.59,
+          "width": 50.5,
+          "height": 35.8
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc7 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 695.61,
+          "top": 804.04,
+          "right": 743.66,
+          "bottom": 835.86,
+          "width": 48.05,
+          "height": 31.82
+        },
+        "containerSelector": "#doc11",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 695.61,
+          "y": 804.04,
+          "width": 48.05,
+          "height": 31.82
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.111,
+        "selector": "#doc9 > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 491.27,
+          "top": 845.32,
+          "right": 543.05,
+          "bottom": 883.37,
+          "width": 51.78,
+          "height": 38.05
+        },
+        "containerSelector": "#doc10",
+        "text": "PDF",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.15,
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 491.27,
+          "y": 845.32,
+          "width": 51.78,
+          "height": 38.05
+        },
+        "firstSeen": 2.111,
+        "lastSeen": 2.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.111
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 6.333,
+        "selector": "#cam",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -128.25,
+          "top": 15,
+          "right": 1208.25,
+          "bottom": 2685.3,
+          "width": 1336.5,
+          "height": 2670.3
+        },
+        "containerSelector": "#demo > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 128.25,
+          "right": 128.25,
+          "bottom": 765.3
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/demo.html",
+        "bbox": {
+          "x": -128.25,
+          "y": 15,
+          "width": 1336.5,
+          "height": 2670.3
+        },
+        "firstSeen": 6.333,
+        "lastSeen": 19,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          6.333,
+          10.556,
+          14.778,
+          19
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 23.222,
+        "selector": "#ag",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 0,
+          "top": 672.4,
+          "right": 1080,
+          "bottom": 2797.4,
+          "width": 1080,
+          "height": 2125
+        },
+        "containerSelector": "#cata > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 877.4
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "ag",
+          "data-start": "0",
+          "data-duration": "9",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/cata.html",
+        "bbox": {
+          "x": 0,
+          "y": 672.4,
+          "width": 1080,
+          "height": 2125
+        },
+        "firstSeen": 23.222,
+        "lastSeen": 27.444,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          23.222,
+          27.444
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 35.889,
+        "selector": "#bg",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -1520.3,
+          "top": -65.86,
+          "right": 2125.25,
+          "bottom": 1985.86,
+          "width": 3645.55,
+          "height": 2051.71
+        },
+        "containerSelector": "#fin > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 1520.3,
+          "right": 1045.25,
+          "top": 65.86,
+          "bottom": 65.86
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "bg",
+          "data-start": "0",
+          "data-duration": "7",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/fin.html",
+        "bbox": {
+          "x": -1520.3,
+          "y": -65.86,
+          "width": 3645.55,
+          "height": 2051.71
+        },
+        "firstSeen": 35.889,
+        "lastSeen": 35.889,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          35.889
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 35.889,
+        "selector": "#bg",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": -1520.3,
+          "top": -65.86,
+          "right": 2125.25,
+          "bottom": 1985.86,
+          "width": 3645.55,
+          "height": 2051.71
+        },
+        "containerSelector": "#fin > div:nth-of-type(1)",
+        "text": "",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "bg",
+          "data-start": "0",
+          "data-duration": "7",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/fin.html",
+        "bbox": {
+          "x": -1520.3,
+          "y": -65.86,
+          "width": 3645.55,
+          "height": 2051.71
+        },
+        "firstSeen": 35.889,
+        "lastSeen": 35.889,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          35.889
+        ]
+      }
+    ],
+    "duration": 38,
+    "samples": [
+      2.111,
+      6.333,
+      10.556,
+      14.778,
+      19,
+      23.222,
+      27.444,
+      31.667,
+      35.889
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 19,
+    "truncated": false,
+    "faceCheck": {
+      "ran": true,
+      "candidates": 0,
+      "faces": 0
+    }
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      2.111,
+      10.556,
+      19,
+      27.444,
+      35.889
+    ],
+    "checked": 22,
+    "passed": 22
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 12 text elements stay under it for 0.5 s or more, the smallest \"PDF\" at 22 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "PDF",
+        "selector": "#doc1 > b:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/pain.html",
+        "bbox": {
+          "x": 0,
+          "y": 1872.46,
+          "width": 2.27,
+          "height": 47.54
+        },
+        "time": 0,
+        "times": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.125,
+          0.375,
+          0.5,
+          0.75,
+          1,
+          1.125,
+          1.25
+        ],
+        "fontPx": 22.08,
+        "floorPx": 28,
+        "seconds": 6,
+        "elements": [
+          {
+            "selector": "#doc1 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0,
+            "seconds": 6
+          },
+          {
+            "selector": "#doc2 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0,
+            "seconds": 6
+          },
+          {
+            "selector": "#doc5 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0,
+            "seconds": 6
+          },
+          {
+            "selector": "#doc7 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0,
+            "seconds": 6
+          },
+          {
+            "selector": "#doc10 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0,
+            "seconds": 6
+          },
+          {
+            "selector": "#doc0 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0.125,
+            "seconds": 5.875
+          },
+          {
+            "selector": "#doc3 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0.375,
+            "seconds": 5.625
+          },
+          {
+            "selector": "#doc4 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0.5,
+            "seconds": 5.5
+          },
+          {
+            "selector": "#doc6 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 0.75,
+            "seconds": 5.25
+          },
+          {
+            "selector": "#doc8 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 1,
+            "seconds": 5
+          },
+          {
+            "selector": "#doc9 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 1.125,
+            "seconds": 4.875
+          },
+          {
+            "selector": "#doc11 > b:nth-of-type(1)",
+            "text": "PDF",
+            "fontPx": 22.08,
+            "time": 1.25,
+            "seconds": 4.75
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 304
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

@@ -1,0 +1,3 @@
+- `sfx/writing-on-paper-wav-01167870.mp3` : "Writing On Paper.wav" by rivernile7 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/. https://freesound.org/people/rivernile7/sounds/234016
+- `sfx/electro-pop-01-loop-bb46c681.mp3` : "electro-pop 01 loop" by frankum is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/. https://freesound.org/people/frankum/sounds/208520
+- `sfx/tokyo-100bpm-electronic-music-loop-mastered-65c9406d.mp3` : "tokyo 100BPM Electronic Music Loop Mastered" by szegvari is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/. https://freesound.org/people/szegvari/sounds/520775

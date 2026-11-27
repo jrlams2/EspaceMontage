@@ -1,0 +1,25 @@
+<template><style>@font-face{font-family:"Unbounded";src:url("assets/fonts/Unbounded.woff2");font-weight:100 900}@font-face{font-family:"Geist";src:url("assets/fonts/Geist.woff2");font-weight:100 900}
+#root{position:absolute;inset:0;background:#0B0F22;overflow:hidden;font-family:Unbounded,sans-serif;color:#fff}
+#bg{position:absolute;left:-1240px;top:0;height:1920px;width:auto}
+#lock{position:absolute;left:0;right:0;top:520px;text-align:center}
+#lmark{width:190px;height:190px}
+#word{font-size:88px;font-weight:800;letter-spacing:-.03em;margin-top:10px;background:linear-gradient(90deg,#fff,#B9A6FF 60%,#36D9F5);-webkit-background-clip:text;color:transparent}
+#tag{position:absolute;left:150px;width:720px;top:960px;text-align:center;font:600 46px Geist;line-height:1.25;color:#E6E8F5}
+#cta{position:absolute;left:270px;width:540px;top:1130px;height:118px;border-radius:59px;background:linear-gradient(90deg,#7856FF,#9B7BFF);font:700 38px Geist;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(120,86,255,.4)}
+</style>
+<div id="root" data-composition-id="fin" data-width="1080" data-height="1920">
+ <img id="bg" class="clip" src="assets/portal.jpeg" data-start="0" data-duration="7">
+ <div id="lock"><svg id="lmark" viewBox="0 0 40 40"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9B7BFF"/><stop offset=".55" stop-color="#7856FF"/><stop offset="1" stop-color="#36D9F5"/></linearGradient></defs><path d="M20 3 37 36h-9.5L20 20.5 12.5 36H3z" fill="url(#g2)"/></svg><div id="word">Agentverse</div></div>
+ <div id="tag" class="clip" data-start="1.4" data-duration="5.6">Décris la tâche.<br>L'agent te rend le fichier.</div>
+ <div id="cta" class="clip" data-start="2.4" data-duration="4.6">Commencer gratuitement</div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#bg',{scale:1.25,x:0,opacity:.0},{scale:1.05,x:-180,opacity:.7,duration:7,ease:'power1.out'},0);
+tl.fromTo('#lmark',{y:-500,scale:.6},{y:0,scale:1,duration:.7,ease:'expo.out'},0.5);
+tl.fromTo('#word',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.5,ease:'power3.out'},0.9);
+tl.fromTo('#lmark',{opacity:0},{opacity:1,duration:.15},0.5).fromTo('#word',{opacity:1},{opacity:1,duration:.01},0);
+tl.fromTo('#tag',{opacity:0,filter:'blur(8px)'},{opacity:1,filter:'blur(0px)',duration:.2,ease:'power4.out'},1.4);
+tl.fromTo('#cta',{scale:.6,opacity:0},{scale:1,opacity:1,duration:.5,ease:'back.out(1.4)'},2.4);
+window.__timelines["fin"]=tl;
+</script></template>

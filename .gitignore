@@ -1,0 +1,14 @@
+.venv/
+Videos/
+exports/
+assets/musique/
+assets/sfx/
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.m4a
+__pycache__/
+.env
+.outils/

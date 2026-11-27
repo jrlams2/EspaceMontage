@@ -1,0 +1,28 @@
+<template><style>@font-face{font-family:"Unbounded";src:url("assets/fonts/Unbounded.woff2");font-weight:100 900}@font-face{font-family:"Geist";src:url("assets/fonts/Geist.woff2");font-weight:100 900}
+#root{position:absolute;inset:0;background:#0B0F22;overflow:hidden;font-family:Unbounded,sans-serif;color:#fff}
+#cam{position:absolute;left:45px;top:0;width:990px;height:1978px;transform-origin:495px 300px}
+#cam video{position:absolute;left:0;top:0;width:990px;height:1978px}
+.cap{position:absolute;left:120px;width:780px;top:300px;font-size:62px;font-weight:700;line-height:1.05;letter-spacing:-.02em;text-shadow:0 4px 30px #0B0F22}
+.cap em{font-style:normal;color:#36D9F5}
+#mark{position:absolute;left:390px;top:780px;width:300px;height:300px}
+#shade{position:absolute;left:0;right:0;top:0;height:620px;background:linear-gradient(#0B0F22 55%,transparent)}
+</style>
+<div id="root" data-composition-id="demo" data-width="1080" data-height="1920">
+ <div id="cam"><video id="dv" class="clip" src="assets/demo.mp4" muted playsinline data-start="1.4" data-duration="13.2"></video></div>
+ <div id="shade"></div>
+ <svg id="mark" class="clip" data-start="0" data-duration="1.6" viewBox="0 0 40 40"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9B7BFF"/><stop offset=".55" stop-color="#7856FF"/><stop offset="1" stop-color="#36D9F5"/></linearGradient></defs><path d="M20 3 37 36h-9.5L20 20.5 12.5 36H3z" fill="url(#g)"/></svg>
+ <div id="c1" class="cap clip" data-start="1.5" data-duration="3.1">Tu décris la tâche. <em>En une phrase.</em></div>
+ <div id="c2" class="cap clip" data-start="4.6" data-duration="2.8">Le coût est annoncé <em>avant</em> de lancer.</div>
+ <div id="c3" class="cap clip" data-start="7.4" data-duration="3.4">L'agent lit les 42 PDF.</div>
+ <div id="c4" class="cap clip" data-start="10.8" data-duration="5.2">Et te rend <em>le fichier Excel.</em></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#mark',{scale:.2,opacity:0},{scale:1,opacity:1,duration:.5,ease:'expo.out'},0).to('#mark',{scale:9,opacity:0,duration:.45,ease:'power3.in'},1.1);
+tl.fromTo('#cam',{scale:1.35,y:450},{scale:1.35,y:450,duration:.01},0);
+tl.to('#cam',{scale:1.15,y:155,duration:.6,ease:'power2.inOut'},4.4);
+tl.to('#cam',{scale:1.0,y:-390,duration:.7,ease:'power2.inOut'},7.2);
+tl.to('#cam',{y:-1050,scale:1.08,duration:.6,ease:'power2.inOut'},11.0);
+['#c1','#c2','#c3','#c4'].forEach((c,i)=>tl.fromTo(c,{opacity:0,filter:'blur(8px)'},{opacity:1,filter:'blur(0px)',duration:.18,ease:'power4.out'},[1.5,4.6,7.4,10.8][i]));
+window.__timelines["demo"]=tl;
+</script></template>
