@@ -39,7 +39,7 @@ example-skills et document-skills (Anthropic), github, figma, notion, lemo-opusc
 
 ## Lemo-Opuscar
 Courts films entièrement en code, dans un style de bibliothèque (pas pour monter des rushs). Bibliothèque : `~/lemo-opuscar` (ne rien y modifier, elle est réinitialisée à chaque mise à jour).
-- Exige ffmpeg 7+ : avant toute commande Lemo-Opuscar (à chaque appel Bash), faire `export PATH=/home/jremy/montage/.outils/ffmpeg7:$PATH` (7.0.2 statique). Le reste du projet utilise le ffmpeg 6.1 du système.
+- Exige ffmpeg 7+ : avant toute commande Lemo-Opuscar (à chaque appel Bash), faire `export PATH="$PWD/.outils/ffmpeg7:$PATH"` (depuis la racine du projet) (7.0.2 statique). Le reste du projet utilise le ffmpeg 6.1 du système.
 - Films créés dans `projets/<slug>/` ; préciser 1080x1920 à 30 fps si vertical (défaut 1920x1080 à 24 fps).
 - Voix et musique à installer au besoin : `setup.sh deps voice music` (script du plugin).
 

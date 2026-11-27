@@ -12,3 +12,8 @@ assets/sfx/
 __pycache__/
 .env
 .outils/
+projets/*/capture/
+projets/*/film/stills/
+projets/*/film/out/
+projets/*/video/.hyperframes/
+node_modules/

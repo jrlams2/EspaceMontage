@@ -1,0 +1,9 @@
+# Outils Python de l'espace montage (installés dans .venv par installer.sh)
+yt-dlp==2026.10.26
+faster-whisper==1.2.1
+av<19            # av 19 casse faster-whisper 1.2
+moviepy==2.2.1
+pydub==0.25.1
+ffmpeg-python==0.2.0
+auto-editor==29.3.1
+scenedetect[opencv]==0.7.3
